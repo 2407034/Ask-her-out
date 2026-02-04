@@ -5,33 +5,38 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Background */
 body {
   height: 100vh;
   background: linear-gradient(135deg, #fff3b0, #fff);
   overflow: hidden;
+  position: relative;
 }
 
-/* floating yellow hearts background */
+/* Floating flowers & hearts (centered) */
 body::before {
-  content: "💛 🌼 💛 🌼 💛 🌼 💛 🌼 💛 🌼";
+  content: "💛 🌼 💛 🌼 💛 🌼 💛 🌼 💛 🌼 💛 🌼 💛 🌼";
   position: absolute;
-  top: 100%;
-  left: 0;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  font-size: 24px;
+  text-align: center;
+  font-size: 22px;
   opacity: 0.6;
-  animation: floatUp 12s linear infinite;
+  animation: floatUp 10s linear infinite;
 }
 
 @keyframes floatUp {
   from {
-    top: 100%;
+    bottom: -40px;
   }
   to {
-    top: -100%;
+    bottom: 110%;
   }
 }
 
+/* Card */
 .container {
   position: relative;
   z-index: 2;
@@ -41,22 +46,28 @@ body::before {
   margin: auto;
   margin-top: 8vh;
   padding: 25px;
-  border-radius: 20px;
+  border-radius: 22px;
   text-align: center;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Heading (force single line) */
 h1 {
   color: #f4b400;
   margin-top: 15px;
+  font-size: 22px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
+/* Subtitle */
 p {
   margin: 10px 0 20px;
   color: #555;
   font-size: 18px;
 }
 
+/* Buttons */
 .btn {
   display: flex;
   justify-content: space-around;
@@ -74,13 +85,13 @@ p {
 /* YES button */
 .btn a:first-child {
   background: #f4b400;
-  color: white;
+  color: #ffffff;
 }
 
 /* NO button */
 .btn a:last-child {
-  background: #eee;
-  color: #333;
+  background: #eeeeee;
+  color: #333333;
 }
 
 .btn a:hover {
